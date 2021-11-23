@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BIN_log=$(/usr/local/mysql/bin/mysql -h192.168.160.101 -udzc -pdzc123 -e "show master status\G;" |awk  'NR==2{print $2}')
+
+POS=$(/usr/local/mysql/bin/mysql -h192.168.160.101 -udzc -pdzc123 -e "show master status\G;" |awk  'NR==3{print $2}')
+
+/usr/local/mysql/bin/mysql -uroot -pdzc123 -e "change master to master_host='192.168.160.101', master_user='wjm', master_password='wjm123', master_log_file='$BIN_log', master_log_pos=$POS; start slave;"
+

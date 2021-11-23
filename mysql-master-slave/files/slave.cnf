@@ -1,0 +1,10 @@
+[mysqld]
+basedir = /usr/local/mysql
+datadir = /opt/data
+socket = /tmp/mysql.sock
+port = 3306
+pid-file = /opt/data/mysql.pid
+user = mysql
+skip-name-resolve
+server_id = 2
+relay-log = mysql_relay

@@ -1,0 +1,13 @@
+[mysqld]
+basedir = /usr/local/mysql
+datadir = /opt/data
+socket = /tmp/mysql.sock
+port = 3306
+pid-file = /opt/data/mysql.pid
+user = mysql
+skip-name-resolve
+log_bin=mysql-bin
+server_id=1
+innodb_flush_log_at_trx_commit=1
+sync_binlog=1
+
